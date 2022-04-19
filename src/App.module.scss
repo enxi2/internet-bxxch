@@ -1,0 +1,30 @@
+@mixin mobile {
+  @media only screen and (max-width: 767px) {
+    @content;
+  }
+}
+
+.app {
+  display: flex;
+  flex-direction: row;
+  max-width: 1280px;
+  margin: 0 auto;
+
+  @include mobile {
+    flex-direction: column-reverse;
+  }
+}
+
+.lyrics,
+.player {
+  padding: 1rem;
+}
+
+.lyrics {
+  flex: 1;
+  white-space: pre;
+}
+
+.player {
+  flex: 1;
+}
